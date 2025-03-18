@@ -1,6 +1,6 @@
 import { Outlet, Routes, Route } from "react-router";
 import Header from "./Header";
-import HomeView from "./Homeview";
+import CreateNotes from "./CreateNotes";
 
 
 
@@ -20,7 +20,7 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route path="/HomeView" element={<HomeView />} />
+          <Route path="/CreateNotes" element={<CreateNotes />} />
         </Route>
       </Routes>
       
