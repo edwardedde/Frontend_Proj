@@ -3,6 +3,8 @@ import Header from "./Header";
 import CreateNotes from "./CreateNotes";
 import ListNotes from "./ListNotes";
 import Home from "./Home";
+import Courses from "./Courses";
+import AddCourse from "./AddCourse";
 
 function App() {
 
@@ -23,6 +25,8 @@ function App() {
           <Route index element={<Home/>} />
           <Route path="/CreateNotes" element={<CreateNotes />} />
           <Route path="/ListNotes" element={<ListNotes />} />
+          <Route path="/Courses" element={<Courses />} />
+          <Route path="/AddCourse" element={<AddCourse />} />
         </Route>
       </Routes>
       
