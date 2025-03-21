@@ -4,15 +4,21 @@ function Header(){
   return(
     <div>
 
-      <h1 className="text-4xl font-bold mb-8
-      text-center ">Course NotesApp</h1>
+      <h1 className="text-5xl font-extrabold mb-8 text-center text-blue-400 drop-shadow-lg">
+        Course NotesApp</h1>
 
-      <nav className="flex space-x-4">
-        <Link className="hover:underline" to={"/"}>
+      <nav className="flex  gap-6 w-full max-w-m">
+        <Link className="w-full text-center py-4 px-8 text-lg font-semibold rounded-xl bg-blue-500 hover:bg-blue-600 transition-all shadow-lg" to={"/"}>
           Etusivu
         </Link>
-        <Link className="hover:underline" to={"/CreateNotes"}>
+        <Link className="w-full text-center py-4 px-8 text-lg font-semibold rounded-xl bg-green-500 hover:bg-green-600 transition-all shadow-lg" to={"/CreateNotes"}>
           CreateNotes
+        </Link>
+        <Link className="w-full text-center py-4 px-8 text-lg font-semibold rounded-xl bg-purple-500 hover:bg-purple-600 transition-all shadow-lg" to={"/ListNotes"}>
+          List notes
+        </Link>
+        <Link className="w-full text-center py-4 px-8 text-lg font-semibold rounded-xl bg-pink-500 hover:bg-pink-600 transition-all shadow-lg">
+          Courses
         </Link>
       </nav>
     </div>

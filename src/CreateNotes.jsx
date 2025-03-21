@@ -1,7 +1,7 @@
 function CreateNotes(){
     return(
         <div>
-            <h1 className="text-6xl"> create notes on this page</h1>
+            <h1 className="pt-7"> On this page you can create notes for a specific course</h1>
         </div>
     );
 }
