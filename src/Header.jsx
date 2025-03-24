@@ -2,7 +2,7 @@ import { Link } from "react-router";
 
 function Header(){
   return(
-    <div>
+    <div className="text-white">
 
       <h1 className="text-5xl font-extrabold mb-8 text-center text-blue-400 drop-shadow-lg">
         Course NotesApp</h1>

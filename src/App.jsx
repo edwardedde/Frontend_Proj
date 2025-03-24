@@ -19,7 +19,7 @@ function App() {
   
 
   return(
-    <div className="min-h-screen text flex flex-col items-center p-6 bg-gradient-to-br from-gray-900 to-gray-700 text-white ">
+    <div className="min-h-screen text flex flex-col items-center p-6 bg-gradient-to-br from-gray-900 to-gray-700 ">
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home/>} />
