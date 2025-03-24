@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import { useNotesStore } from "./stores/useDataStore"; 
 import {List} from "./List";
 
@@ -7,7 +7,7 @@ function CreateNotes(){
     const [note,setNote] = useState("");
     const [courses, setCourses] = useState([]);
     const [selectedCourse, setSelectedCourse] = useState("");
-    const [isLoading, setIsLoading] = useState(false);
+    
 
     const addNote = useNotesStore((state) => state.addNote);
 
@@ -15,7 +15,7 @@ function CreateNotes(){
     const handleFetchData = async () => {
 
 
-        if(!isLoading){
+
             
             const url = "https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses";
     
@@ -24,15 +24,8 @@ function CreateNotes(){
             const data = await response.json();
     
             setCourses(data);
-    
-            setIsLoading(true);
 
         };
-
-        
-        
-
-    };
 
     const handleClick = () => {
         
