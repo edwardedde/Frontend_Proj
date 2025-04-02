@@ -33,9 +33,10 @@ function ListNotes(){
                     {notes.map((note) => {
                         // if selectedCourse is empty show all notes or if selectedCourse name is the same as notes courseName.
                         // courseName then return that courses information
-                        if (selectedCourse === "" || note.courseName === selectedCourse){
+                        if (selectedCourse === "" || note.courseName === selectedCourse)
+                        {
                             return (
-                                <li >
+                                <li key={note.id} >
                                     {note.courseName} - {note.id} - {note.note}
                                 </li>
                             );

@@ -3,7 +3,7 @@ import { useNotesStore } from "./stores/useDataStore";
 
 function CreateNotes(){//component to create notes
     
-    const [note,setNote] = useState(""); //used in textarea to store note
+    const [note, setNote] = useState(""); //used in textarea to store note
     const [courses, setCourses] = useState([]);//used in fetching data from api and stroing in a array
     const [selectedCourse, setSelectedCourse] = useState(""); //used in dropdown menu to store selected name of course
     
