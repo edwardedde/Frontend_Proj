@@ -48,9 +48,9 @@ function Courses(){
 
             </select>
 
-            <div className="text-white">
+            <div className="text-white"/*conditional render, if the length of selectedNotes is 0 then print the text otherwise print the notes*/>
                 <ul>
-                    {selectedNotes.length === 0 ? <p>Ei, muistiinpanoja!</p> : selectedNotes} //conditional render, if the length of selectedNotes is 0 then print the text otherwise print the notes
+                    {selectedNotes.length === 0 ? <p>Ei, muistiinpanoja!</p> : selectedNotes}
                 </ul>
             </div>
         </div>
