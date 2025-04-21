@@ -4,9 +4,11 @@ import { useNotesStore } from "./stores/useDataStore";
 function CreateNotes(){//component to create notes
     
     const [note, setNote] = useState(""); //used in textarea to store note
-    const [courses, setCourses] = useState([]);//used in fetching data from api and stroing in a array
     const [selectedCourse, setSelectedCourse] = useState(""); //used in dropdown menu to store selected name of course
     
+
+    const courses = useNotesStore((state) => state.courses);//zustand datamanagement for global use of courses 
+    const setCourses = useNotesStore((state) => state.setCourses);
     
     const addNote = useNotesStore((state) => state.addNote);//variable that accesses zustand store, variable is used to add data into the store
     const notes = useNotesStore((state) => state.notes);//variable used to retrieve data from zustand so it can be displayed later
@@ -14,15 +16,32 @@ function CreateNotes(){//component to create notes
     
     const handleFetchData = async () => {//function to fetch API data
 
-            const url = "https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses";
-    
-            const response = await fetch(url);
-    
-            const data = await response.json();//stored in variable called data
-    
-            setCourses(data);//data variable added to setCourses array
+        const url = "https://luentomuistiinpano-api.netlify.app/.netlify/functions/courses";    
+        const response = await fetch(url);
+        const data = await response.json();//stored in variable called data
 
-        };
+        const existingCourses = [...courses];
+
+        for (let i = 0; i < data.length; i++ ){
+
+            let exists = false ;
+
+            for (let j = 0; j < courses.length; j++){
+
+                if(data[i].id === courses[j].id){
+                    exists = true;
+                    break;
+                }
+            }
+
+            if(!exists){
+                existingCourses.push(data[i]);
+            }
+        }
+        
+        setCourses(existingCourses);
+
+    };
 
 
     const handleClick = () => { //handles adding course objects into zustand store
@@ -52,12 +71,13 @@ function CreateNotes(){//component to create notes
 
     return(
         <div className="bg-black shadow-md p-6 rounded-lg mt-6 max-w-screen w-full">
-            <h4 className="font-semibold text-green-400">Choose course to create a note</h4>
+            <h4 className="font-semibold text-pink-400">Choose course to create a note</h4>
             
             <select //dropdown menu
                 value={selectedCourse}//course names
                 onChange={(e) => setSelectedCourse(e.target.value)}//when a course name is chosen it sets that name of the course
-                onClick={handleFetchData}// eliminates the need of an extra button to fetch data from api, when the dropdown is clicked the data will be fetched
+                onClick={
+                    handleFetchData}// eliminates the need of an extra button to fetch data from api, when the dropdown is clicked the data will be fetched
             >
                 <option value="">select course</option>
 
