@@ -22,7 +22,8 @@ function CreateNotes(){//component to create notes
 
         const existingCourses = [...courses];
 
-        for (let i = 0; i < data.length; i++ ){
+        for (let i = 0; i < data.length; i++ ){ //compares the outer loop index to all the inexes in the inner loop
+                                                //so that the course is not added again each time the select course is pressed
 
             let exists = false ;
 
