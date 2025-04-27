@@ -7,8 +7,8 @@ function AddCourse(){
     const [id, setId] = useState("");
     const addCourse = useNotesStore((state) => state.addCourse);
 
-    const handleAdd = () => {
-        addCourse({ id, name });
+    const handleAdd = () => {//add the new course object into zustand 
+        addCourse({ id, name });//new course object
         setName("");
         setId("");
         alert(`Course ${name} added, id = ${id}`)
@@ -27,20 +27,20 @@ function AddCourse(){
 
             
             <input  type="text"
-                    className="m-6 border-8 border-green-500"
+                    className="m-6 border-8 border-red-500"
                     placeholder="Coursename" 
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     />
             
             <input  type="text"
-                    className="m-6 border-8 border-orange-500"
+                    className="m-6 border-8 border-red-500"
                     placeholder="course ID"
                     value={id}
                     onChange={(e) => setId(e.target.value)}
                     />
             
-            <button className="m-6 border-8 border-black text-pink-600 "
+            <button className="m-6 border-8 text-red-500 "
                     onClick={handleAdd}
             
             >Add course</button>

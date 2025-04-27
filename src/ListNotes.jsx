@@ -41,7 +41,7 @@ function ListNotes(){
 
     return(
         <div>
-            <h1 className="pt-7 text-red-50"> list notes on this page, filter specific or show all</h1>
+            <h1 className="text-6xl text-purple-400"> List notes on this page, filter by specific or show all</h1>
 
             
             <select //dropdownmenu
@@ -70,7 +70,7 @@ function ListNotes(){
                         if (selectedCourse === "" || note.courseName === selectedCourse)
                         {
                             return (
-                                <li key={index} >
+                                <li key={index} className="text-purple-400">
                                     {note.courseName} - {note.id} - {note.note}
                                 </li>
                             );

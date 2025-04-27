@@ -32,13 +32,13 @@ function Courses(){
     }
 
     return(
-        <div>
+        <div className="text-pink-400">
                 <select //dropdownmenu
                 value={selectedCourse} 
                 onChange={(e) => setSelectedCourse(e.target.value)}//updates selectedCourse with the choise from the dropdown
                 className="border p-2 m-2"
             >
-                <option value="">Notes</option>
+                <option >Notes</option>
 
                 {notes.map((note) => ( //maps each coursename as a option in dropdown menu
                     <option key={note.courseName} value={note.courseName}>
@@ -49,7 +49,7 @@ function Courses(){
             </select>
 
             <div className="text-white"/*conditional render, if the length of selectedNotes is 0 then print the text otherwise print the notes*/>
-                <ul>
+                <ul className="text-pink-400">
                     {selectedNotes.length === 0 ? <p>Ei, muistiinpanoja!</p> : selectedNotes}
                 </ul>
             </div>

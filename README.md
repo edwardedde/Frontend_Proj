@@ -1,12 +1,23 @@
-# React + Vite
+# Course Notes App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple frontend application for taking notes during class. The App also fetches notes and courses from two API's. You can add your own course and filter through course notes by selecting a specific course.
 
-Currently, two official plugins are available:
+# Features
+-Home (explanation of the app)
+-CreateNotes (create note for a specific course, displays created nptes during that session)
+-List notes ( lists notes from created notes and API, able to filter by course)
+-Courses (search for notes, filter by course. Also possibility to delete note)
+-Add a Course ( Add a course, name and id must be given)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# Tech Stack
+-React
+-Vite
+-Zustand
+-Taillwind CSS
+-API
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Installation and running
+- git clone repo
+- cd into your repo
+- npm install
+- npm run dev

@@ -71,7 +71,7 @@ function CreateNotes(){//component to create notes
 
     return(
         <div className="bg-black shadow-md p-6 rounded-lg mt-6 max-w-screen w-full">
-            <h4 className="font-semibold text-pink-400">Choose course to create a note</h4>
+            <h4 className="font-semibold text-green-400">Choose course to create a note</h4>
             
             <select //dropdown menu
                 value={selectedCourse}//course names
@@ -79,7 +79,7 @@ function CreateNotes(){//component to create notes
                 onClick={
                     handleFetchData}// eliminates the need of an extra button to fetch data from api, when the dropdown is clicked the data will be fetched
             >
-                <option value="">select course</option>
+                <option >select course</option>
 
                 {courses.map((course) => (  //maps all of the course names from API as options in dropdown menu
                                             //uses the course unique id as key
@@ -107,7 +107,7 @@ function CreateNotes(){//component to create notes
             </button>
             
            <div className="bg-white">
-                <h4 className="text-4xl font-extrabold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-pink-500 via-purple-500 to-indigo-600">
+                <h4 className="text-4xl font-extrabold text-gradient bg-clip-text text-green-400">
                     saved notes:
                 </h4>
                 <ul>
