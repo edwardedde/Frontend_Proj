@@ -15,6 +15,7 @@ A simple frontend application for taking notes during class. The App also fetche
 -Zustand
 -Taillwind CSS
 -API
+-React Router
 
 # Installation and running
 - git clone repo
